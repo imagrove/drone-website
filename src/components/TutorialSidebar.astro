@@ -3,12 +3,22 @@ import { getCollection } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { defaultLang, ui } from '../i18n/ui';
 
-// Detect language from URL - tutorials are at /tutorials/{lang}/...
-const pathParts = Astro.url.pathname.split('/');
-const langIndex = pathParts.indexOf('tutorials') + 1;
-const lang = (langIndex < pathParts.length && pathParts[langIndex] in ui) 
-  ? pathParts[langIndex] as keyof typeof ui 
-  : defaultLang;
+// Detect language from URL
+// For /tutorials/zh/... -> zh
+// For /zh/tutorials/... -> zh (from first part)
+const pathParts = Astro.url.pathname.split('/').filter(Boolean);
+let lang = defaultLang;
+
+if (pathParts[0] === 'tutorials' && pathParts[1] && pathParts[1] in ui) {
+  // /tutorials/zh/...
+  lang = pathParts[1] as keyof typeof ui;
+} else if (pathParts[0] === 'zh') {
+  // /zh/tutorials
+  lang = 'zh';
+} else if (pathParts[0] === 'en') {
+  // /en/tutorials
+  lang = 'en';
+}
 const t = useTranslations(lang);
 
 // Get current path to highlight active item
