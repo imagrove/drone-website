@@ -50,9 +50,9 @@ drone-website/
 
 ### 相关文档
 
-- 初级教材: `网站-社区/初级教材.md`
-- 中级教材: `网站-社区/中级教材.md`
-- 高级教材: `网站-社区/高级教材1.md`, `高级教材2.md`
+- 初级教材: `1.1初级教材.md`
+- 中级教材: `1.2中级教材.md`
+- 高级教材: `1.3高级教材.md`
 
 ## 开发命令
 
@@ -153,3 +153,53 @@ vercel login
 # 部署到生产环境
 vercel --prod
 ```
+
+---
+
+## 故障排除
+
+### 问题：网站返回 404 错误
+
+**症状**：
+- 本地构建成功 (`npm run build` 生成 `dist/` 目录)
+- Vercel 部署状态显示 "Ready"
+- 访问网站返回 `HTTP 404` 或 `NOT_FOUND`
+- Vercel 部署日志显示 `Builds: . [0ms]`
+
+**根本原因**：
+Vercel 项目的 **Output Directory** 默认为 `public` 或 `.`，而 Astro 构建输出到 `dist` 目录。
+
+**解决方案**：
+访问 https://vercel.com/imagroves-projects/drone-website/settings/build-and-deployment
+将 **Output Directory** 修改为 `dist`，然后重新部署。
+
+### 验证部署
+
+部署成功后，验证以下 URL：
+
+- 英文首页：https://drone.imagrove.com/
+- 中文首页：https://drone.imagrove.com/zh/
+- 硬件页面：https://drone.imagrove.com/hardware
+- 下载页面：https://drone.imagrove.com/downloads
+- 教程页面：https://drone.imagrove.com/tutorials
+
+### 常用命令
+
+```bash
+# 本地构建测试
+npm run build
+
+# 检查 dist 目录
+ls -la dist/
+
+# 检查部署状态
+vercel ls drone-website
+
+# 查看项目设置
+vercel project inspect drone-website
+```
+
+### 参考链接
+
+- [Astro 部署指南 - Vercel](https://docs.astro.build/en/guides/deploy/vercel/)
+- [Vercel 项目设置文档](https://vercel.com/docs/concepts/projects/project-settings)
