@@ -2,12 +2,20 @@
 
 基于 Astro 构建的 ESP32 无人机教育网站。
 
+## 项目链接
+
+| 类型 | 链接 |
+|------|------|
+| 🌐 **生产网站** | https://drone.imagrove.com |
+| 📁 **GitHub 仓库** | https://github.com/imagrove/drone-website |
+| ⚙️ **Vercel 设置** | https://vercel.com/imagroves-projects/drone-website/settings/build-and-deployment |
+
 ## 技术栈
 
 - **框架**: [Astro](https://astro.build)
 - **内容**: Markdown + Content Collections
 - **样式**: 原生 CSS (极简灰白风格)
-- **部署**: Vercel
+- **部署**: Vercel + GitHub 自动部署
 
 ## 项目结构
 
@@ -88,32 +96,60 @@ draft: false
 
 ## 部署
 
-### 自动部署
+### 自动部署（推荐）
 
-推送到 GitHub 后，Vercel 自动部署。
+项目已配置 GitHub + Vercel 自动部署。推送代码到 GitHub 后，Vercel 会自动构建并部署。
 
 ```bash
 git add -A
 git commit -m "更新内容"
-git push
+git push origin main
 ```
 
 ### ⚠️ 重要：Vercel 配置
 
-首次部署或创建新项目时，需要在 Vercel Dashboard 中配置：
+如果创建新项目或需要重新配置，按以下步骤设置：
 
-1. 访问项目 Settings → Build & Development Settings
-2. 确保以下配置正确：
-   - **Framework Preset**: `Astro`
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist` ⚠️ （默认为 public，必须修改！）
-   - **Install Command**: `npm install`
+#### 1. 连接 GitHub 仓库
 
-> **注意**：如果 Output Directory 设置不正确，网站会返回 404 错误。详见 [DEPLOYMENT.md](./DEPLOYMENT.md)
+1. 访问 https://vercel.com/imagroves-projects/drone-website/settings/git
+2. 在 **Connected Git Repository** 部分点击 **Connect**
+3. 选择 **GitHub** → 选择 `imagrove/drone-website` 仓库
+4. 保存
 
-### 手动部署
+#### 2. 配置构建设置
+
+1. 访问 https://vercel.com/imagroves-projects/drone-website/settings/build-and-deployment
+2. 修改以下配置：
+
+| 设置项 | 值 | 说明 |
+|--------|-----|------|
+| **Framework Preset** | `Astro` | 框架类型 |
+| **Build Command** | `npm run build` | 构建命令 |
+| **Output Directory** | `dist` | ⚠️ **必须修改！** 默认为 `public` |
+| **Install Command** | `npm install` | 依赖安装 |
+
+3. 点击 **Save** 保存
+
+> **注意**：如果 Output Directory 设置不正确（不是 `dist`），网站会返回 404 错误。详见 [DEPLOYMENT.md](./DEPLOYMENT.md)
+
+#### 3. 配置自定义域名
+
+1. 访问 https://vercel.com/imagroves-projects/drone-website/settings/domains
+2. 添加域名：`drone.imagrove.com`
+3. 按提示配置 DNS
+
+### 手动部署（备用）
+
+如果自动部署失败，可以使用 Vercel CLI 手动部署：
 
 ```bash
-# 使用 Vercel CLI
+# 安装 Vercel CLI
+npm i -g vercel
+
+# 登录
+vercel login
+
+# 部署到生产环境
 vercel --prod
 ```
