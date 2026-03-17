@@ -1,52 +1,73 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const tutorials = await getCollection('tutorials', ({ data }) => {
   return data.draft !== true && data.level === 'beginner';
 });
 
 tutorials.sort((a, b) => a.data.order - b.data.order);
+
+const isZh = lang === 'zh';
 ---
 
 <Layout 
-    title="Drone Tutorials - Learn to Build and Program ESP32 Drones"
-    description="Step-by-step drone tutorials from beginner to advanced. Learn drone assembly, programming, flight control, and AI integration."
-    lang="en"
+    title={isZh ? "无人机教程 - 学习构建和编程 ESP32 无人机" : "Drone Tutorials - Learn to Build and Program ESP32 Drones"}
+    description={isZh ? "从入门到精通的无人机教程。学习无人机组装、编程、飞行控制和 AI 集成。" : "Step-by-step drone tutorials from beginner to advanced. Learn drone assembly, programming, flight control, and AI integration."}
+    lang={lang}
 >
     <header style="background: white; border-bottom: 1px solid var(--border); padding: 1rem 2rem;">
         <nav style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <a href="/" style="font-weight: 700; font-size: 1.25rem; color: var(--text-dark);">ESP32 Drone</a>
+            <a href={isZh ? "/zh/" : "/"} style="font-weight: 700; font-size: 1.25rem; color: var(--text-dark);">ESP32 Drone</a>
             <div style="display: flex; gap: 2rem;">
-                <a href="/">Home</a>
-                <a href="/tutorials" style="font-weight: 600;">Tutorials</a>
-                <a href="/hardware">Hardware</a>
-                <a href="/downloads">Downloads</a>
+                <a href={isZh ? "/zh/" : "/"}>{t('nav.home')}</a>
+                <a href={isZh ? "/zh/tutorials" : "/tutorials"} style="font-weight: 600;">{t('nav.tutorials')}</a>
+                <a href={isZh ? "/zh/hardware" : "/hardware"}>{t('nav.hardware')}</a>
+                <a href={isZh ? "/zh/downloads" : "/downloads"}>{t('nav.downloads')}</a>
             </div>
             <div>
-                <a href="/zh/tutorials">中文</a>
+                <a href={isZh ? "/tutorials" : "/zh/tutorials"}>{t('nav.lang')}</a>
             </div>
         </nav>
     </header>
     
-    <main style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-        <h1 style="margin-bottom: 2rem;">Tutorials</h1>
+    <main style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 250px 1fr; gap: 2rem;">
+        <!-- Sidebar -->
+        <aside style="border-right: 1px solid var(--border); padding-right: 1rem;">
+            <h3 style="margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; color: var(--text-light);">{t('tutorials.sidebar.title')}</h3>
+            <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <a href={isZh ? "/zh/tutorials" : "/tutorials"} style="font-size: 0.9rem; font-weight: 600; color: var(--primary);">{t('courses.beginner.title')}</a>
+                <a href={isZh ? "/zh/tutorials/intermediate" : "/tutorials/intermediate"} style="font-size: 0.9rem; color: var(--text-medium);">{t('courses.intermediate.title')}</a>
+                <a href={isZh ? "/zh/tutorials/advanced" : "/tutorials/advanced"} style="font-size: 0.9rem; color: var(--text-medium);">{t('courses.advanced.title')}</a>
+            </nav>
+        </aside>
         
-        <div style="display: grid; gap: 1rem;">
-            {tutorials.map((tutorial) => (
-                <article style="background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
-                    <h2 style="margin-bottom: 0.5rem;">
-                        <a href={`/tutorials/${tutorial.slug}`} style="color: var(--text-dark);">
-                            {tutorial.data.title}
-                        </a>
-                    </h2>
-                    <p style="color: var(--text-medium); margin-bottom: 1rem;">{tutorial.data.description}</p>
-                    <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-light);">
-                        <span>Level: {tutorial.data.level}</span>
-                        <span>Duration: {tutorial.data.duration}</span>
-                    </div>
-                </article>
-            ))}
+        <!-- Content -->
+        <div>
+            <h1 style="margin-bottom: 2rem;">{t('tutorials.title')}</h1>
+            
+            <h2 style="margin-bottom: 1.5rem;">{t('tutorials.beginner.title')}</h2>
+            
+            <div style="display: grid; gap: 1rem;">
+                {tutorials.map((tutorial) => (
+                    <article style="background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;">
+                        <h2 style="margin-bottom: 0.5rem;">
+                            <a href={`${isZh ? '/zh' : ''}/tutorials/${tutorial.slug}`} style="color: var(--text-dark);">
+                                {tutorial.data.title}
+                            </a>
+                        </h2>
+                        <p style="color: var(--text-medium); margin-bottom: 1rem;">{tutorial.data.description}</p>
+                        <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-light);">
+                            <span>{t('tutorials.level')}: {tutorial.data.level}</span>
+                            <span>{t('tutorials.duration')}: {tutorial.data.duration}</span>
+                        </div>
+                    </article>
+                ))}
+            </div>
         </div>
     </main>
 </Layout>
