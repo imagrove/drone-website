@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "framework": "astro",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "rewrites": [
+    { "source": "/tutorials/beginner", "destination": "/tutorials/index.html" },
+    { "source": "/zh/tutorials/beginner", "destination": "/zh/tutorials/index.html" }
+  ]
+}

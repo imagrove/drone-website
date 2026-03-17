@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drone.imagrove.com/sitemap-index.xml

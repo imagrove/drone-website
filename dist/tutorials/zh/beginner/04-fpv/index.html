@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>项目 04：我的眼睛 - ESP32 Drone Tutorial</title><meta name="description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><meta name="keywords" content="ESP32 drone, drone kit, STEM education, programmable drone, open source drone"><link rel="canonical" href="https://drone.imagrove.com/tutorials/zh/beginner/04-fpv/"><link rel="alternate" hreflang="x-default" href="https://drone.imagrove.com/"><link rel="alternate" hreflang="en" href="https://drone.imagrove.com/"><link rel="alternate" hreflang="zh" href="https://drone.imagrove.com/zh/"><!-- Open Graph --><meta property="og:title" content="项目 04：我的眼睛 - ESP32 Drone Tutorial"><meta property="og:description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><meta property="og:url" content="https://drone.imagrove.com/tutorials/zh/beginner/04-fpv/"><meta property="og:type" content="website"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="项目 04：我的眼睛 - ESP32 Drone Tutorial"><meta name="twitter:description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><style>:root{--primary: #1E293B;--primary-dark: #0F172A;--secondary: #64748B;--bg-light: #FAFAFA;--bg-white: #FFFFFF;--text-dark: #1E293B;--text-medium: #475569;--text-light: #94A3B8;--border: #E2E8F0;--shadow-sm: 0 1px 2px rgba(0,0,0,.04);--shadow: 0 4px 6px -1px rgba(0,0,0,.05);--radius: 8px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;background:var(--bg-light);color:var(--text-dark);line-height:1.7}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
+</style></head> <body>  <header style="background: white; border-bottom: 1px solid var(--border); padding: 1rem 2rem;"> <nav style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;"> <a href="/" style="font-weight: 700; font-size: 1.25rem; color: var(--text-dark);">ESP32 Drone</a> <div style="display: flex; gap: 2rem;"> <a href="/">Home</a> <a href="/tutorials">Tutorials</a> <a href="/hardware">Hardware</a> <a href="/downloads">Downloads</a> </div> </nav> </header> <div style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 250px 1fr; gap: 2rem;"> <!-- Sidebar --> <aside style="border-right: 1px solid var(--border); padding-right: 1rem;"> <h3 style="margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; color: var(--text-light);">
+Beginner Tutorial
+</h3> <nav style="display: flex; flex-direction: column; gap: 0.5rem;"> <a href="#overview" style="font-size: 0.9rem;">Overview</a> <a href="#materials" style="font-size: 0.9rem;">Materials</a> <a href="#assembly" style="font-size: 0.9rem;">Assembly</a> <a href="#firmware" style="font-size: 0.9rem;">Firmware</a> <a href="#first-flight" style="font-size: 0.9rem;">First Flight</a> </nav> </aside> <!-- Content --> <main> <div style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);"> <span style="font-size: 0.85rem; color: var(--text-light); text-transform: uppercase;"> beginner Level
+</span> <h1 style="margin: 0.5rem 0;">项目 04：我的眼睛</h1> <p style="color: var(--text-medium);">给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。</p> <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);"> <span>Duration: 1 小时</span> <span>Prerequisites: 已完成项目 03：空中画家</span> </div> </div> <article style="line-height: 1.8;"> <h2 id="概述">概述</h2>
+<p>现在你已经学会了如何让无人机成为空中画家，接下来让我们给它安装一双眼睛！在本项目中，你将学习如何给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。</p>
+<h2 id="你将学到什么">你将学到什么</h2>
+<ul>
+<li>摄像头模块的安装</li>
+<li>摄像头与 ESP32 的连接</li>
+<li>第一人称视角（FPV）的实现</li>
+<li>实时视频传输</li>
+</ul>
+<h2 id="所需材料">所需材料</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>物品</th><th>数量</th><th>说明</th></tr></thead><tbody><tr><td>已组装好的无人机</td><td>1</td><td>完成项目 03 的无人机</td></tr><tr><td>OV2640 摄像头模块</td><td>1</td><td>用于第一人称视角</td></tr><tr><td>USB 数据线</td><td>1</td><td>用于烧录固件</td></tr><tr><td>电脑</td><td>1</td><td>用于下载和烧录固件</td></tr></tbody></table>
+<h2 id="步骤-1安装摄像头">步骤 1：安装摄像头</h2>
+<h3 id="11-摄像头固定">1.1 摄像头固定</h3>
+<ol>
+<li>将 OV2640 摄像头模块用双面胶固定在无人机机架前方</li>
+<li>确保摄像头镜头朝向无人机前方，角度略微向下（约 15 度）</li>
+</ol>
+<h3 id="12-摄像头接线">1.2 摄像头接线</h3>
+<p>将 OV2640 摄像头模块连接到 ESP32 开发板：</p>
+<ul>
+<li>摄像头 VCC → ESP32 3.3V</li>
+<li>摄像头 GND → ESP32 GND</li>
+<li>摄像头 SCL → ESP32 GPIO 22</li>
+<li>摄像头 SDA → ESP32 GPIO 21</li>
+</ul>
+<h2 id="步骤-2烧录摄像头固件">步骤 2：烧录摄像头固件</h2>
+<h3 id="21-下载摄像头固件">2.1 下载摄像头固件</h3>
+<ol>
+<li>访问资源下载页面，下载 <code>fpv.bin</code> 文件到电脑桌面</li>
+</ol>
+<h3 id="22-烧录固件">2.2 烧录固件</h3>
+<ol>
+<li>按住 ESP32 开发板的 “BOOT” 键，同时插入 USB 数据线到电脑</li>
+<li>打开 <code>flash_tool.exe</code>，选择 <code>fpv.bin</code> 文件</li>
+<li>点击”烧录”按钮，等待烧录完成（约 10 秒）</li>
+<li>工具显示”烧录成功”后，移除 USB 数据线</li>
+</ol>
+<h2 id="步骤-3体验第一人称视角">步骤 3：体验第一人称视角</h2>
+<h3 id="31-连接无人机">3.1 连接无人机</h3>
+<ol>
+<li>打开无人机电源（锂电池开关）</li>
+<li>用手机连接无人机 Wi-Fi（名称：<code>ESP-Drone</code>，密码：<code>12345678</code>）</li>
+<li>打开 <code>Drone Control</code> APP</li>
+</ol>
+<h3 id="32-查看摄像头画面">3.2 查看摄像头画面</h3>
+<ol>
+<li>在 APP 中点击”摄像头”按钮</li>
+<li>屏幕上会显示无人机看到的画面！</li>
+<li>控制无人机飞行，感觉自己像在开飞机一样！</li>
+</ol>
+<h3 id="33-飞行测试">3.3 飞行测试</h3>
+<ol>
+<li>尝试控制无人机在室内飞行，观察摄像头画面</li>
+<li>注意飞行安全，避免碰撞障碍物</li>
+<li>体验从不同角度观察周围环境的乐趣</li>
+</ol>
+<h2 id="步骤-4挑战任务">步骤 4：挑战任务</h2>
+<h3 id="41-天花板探索挑战">4.1 天花板探索挑战</h3>
+<ol>
+<li>控制无人机向天花板飞行</li>
+<li>用摄像头拍摄天花板的画面</li>
+<li>看看你能发现什么有趣的细节！</li>
+</ol>
+<h3 id="42-穿越障碍物挑战">4.2 穿越障碍物挑战</h3>
+<ol>
+<li>在室内设置简单的障碍物（如椅子、桌子）</li>
+<li>使用第一人称视角，尝试穿越障碍物</li>
+<li>练习精准控制和空间感知能力</li>
+</ol>
+<h2 id="故障排除">故障排除</h2>
+<h3 id="摄像头无画面">摄像头无画面</h3>
+<ul>
+<li>检查摄像头接线是否正确</li>
+<li>确认固件烧录成功</li>
+<li>检查摄像头是否损坏</li>
+</ul>
+<h3 id="画面卡顿">画面卡顿</h3>
+<ul>
+<li>确保电池电量充足</li>
+<li>减少飞行环境中的 Wi-Fi 干扰</li>
+<li>保持手机与无人机的距离不要太远</li>
+</ul>
+<h2 id="成就感">成就感</h2>
+<p>恭喜你！你的无人机现在有了一双眼睛！通过安装摄像头并体验第一人称视角，你已经进入了无人机飞行的新境界。现在你可以像飞行员一样，从无人机的视角看世界，这是一种非常神奇的体验。</p>
+<h2 id="下一步">下一步</h2>
+<p>在下一个项目中，你将学习如何让无人机自动追踪红色小球，成为你的”跟屁虫”，体验更智能的飞行功能。</p>
+<p><a href="/zh/tutorials/beginner/05-tracking">继续项目 05：跟屁虫 →</a></p> </article> </main> </div>  </body></html>
