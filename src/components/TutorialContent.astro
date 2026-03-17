@@ -52,7 +52,7 @@ const t = useTranslations(lang);
                 <span style="font-size: 0.85rem; color: var(--text-light); text-transform: uppercase;">
                     {entry.data.level} Level
                 </span>
-                <h1 style="margin: 0.5rem 0; font-size: 2rem;">{entry.data.title}</h1>
+                <h1 class="tutorial-title">{entry.data.title}</h1>
                 <p style="color: var(--text-medium); font-size: 1.1rem;">{entry.data.description}</p>
                 <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);">
                     <span>⏱️ {entry.data.duration}</span>
@@ -76,6 +76,11 @@ const t = useTranslations(lang);
 </Layout>
 
 <style>
+    .tutorial-title {
+        margin: 0.5rem 0;
+        font-size: 2rem;
+        color: var(--text-dark);
+    }
     .tutorial-content :global(h2) {
         margin-top: 2rem;
         margin-bottom: 1rem;
@@ -149,7 +154,7 @@ const t = useTranslations(lang);
             padding: 1rem !important;
             max-width: 100% !important;
         }
-        .tutorial-content :global(h1) {
+        .tutorial-title {
             font-size: 1.5rem;
         }
         .tutorial-content :global(h2) {
