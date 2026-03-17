@@ -47,7 +47,7 @@ const t = useTranslations(lang);
         </div>
 
         <!-- Content -->
-        <main style="padding: 2rem; max-width: 800px;">
+        <main class="tutorial-main">
             <div style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);">
                 <span style="font-size: 0.85rem; color: var(--text-light); text-transform: uppercase;">
                     {entry.data.level} Level
@@ -117,10 +117,29 @@ const t = useTranslations(lang);
         border-radius: var(--radius);
         overflow-x: auto;
         margin-bottom: 1rem;
+        max-width: 100%;
     }
     .tutorial-content :global(pre code) {
         background: transparent;
         padding: 0;
+        white-space: pre;
+        word-wrap: normal;
+    }
+    .tutorial-content :global(table) {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+        overflow-x: auto;
+        display: block;
+    }
+    .tutorial-content :global(th), .tutorial-content :global(td) {
+        padding: 0.5rem;
+        border: 1px solid var(--border);
+        text-align: left;
+    }
+    .tutorial-main {
+        padding: 2rem;
+        max-width: 800px;
     }
 
     /* Mobile styles */
@@ -150,9 +169,9 @@ const t = useTranslations(lang);
         .mobile-sidebar-overlay.active {
             display: block !important;
         }
-        main {
-            padding: 1rem !important;
-            max-width: 100% !important;
+        .tutorial-main {
+            padding: 1rem;
+            max-width: 100%;
         }
         .tutorial-title {
             font-size: 1.5rem;
