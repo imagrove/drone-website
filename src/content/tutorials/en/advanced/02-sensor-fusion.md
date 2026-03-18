@@ -1,5 +1,5 @@
 ---
-title: "Project 02: Sensor Fusion Expert"
+title: "Sensor Fusion Expert"
 description: "Develop multi-sensor data fusion systems to improve drone state estimation accuracy."
 level: advanced
 order: 2
@@ -111,4 +111,4 @@ Congratulations! You have mastered the core technology of sensor fusion, which i
 
 In the next project, you will learn how to use camera optical flow data for indoor positioning.
 
-[Continue to Project 03: Visual Navigation →](/tutorials/advanced/03-visual-navigation)
+[Continue to Project 03: Visual Navigation →](/tutorials/en/advanced/03-visual-navigation)

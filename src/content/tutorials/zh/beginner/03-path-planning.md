@@ -1,5 +1,5 @@
 ---
-title: "项目 03：空中画家"
+title: "空中画家"
 description: "使用路径规划工具，让无人机自动画出'8'字或心形，成为一个空中画家。"
 level: beginner
 order: 3
@@ -107,4 +107,4 @@ lang: zh
 
 在下一个项目中，你将学习如何给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。
 
-[继续项目 04：我的眼睛 →](/zh/tutorials/beginner/04-fpv)
+[继续项目 04：我的眼睛 →](/tutorials/zh/beginner/04-fpv)

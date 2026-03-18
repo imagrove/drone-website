@@ -1,5 +1,5 @@
 ---
-title: "项目 03：高度计解密"
+title: "高度计解密"
 description: "读取气压计数据，计算真实高度，并实现更精准的定高功能。"
 level: intermediate
 order: 3
@@ -99,4 +99,4 @@ if (fabs(current_altitude - target_altitude) < 0.1) {
 
 在下一个项目中，你将学习如何读取 IMU 数据，用互补滤波算法计算无人机姿态。
 
-[继续项目 04：姿态魔术师 →](/zh/tutorials/intermediate/04-attitude)
+[继续项目 04：姿态魔术师 →](/tutorials/zh/intermediate/04-attitude)

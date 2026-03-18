@@ -1,5 +1,5 @@
 ---
-title: "Project 03: Path Planning"
+title: "Path Planning"
 description: "Implement basic path planning algorithms to make the drone fly along a preset route."
 level: beginner
 order: 3
@@ -120,4 +120,4 @@ Congratulations! You have implemented basic path planning, which is the foundati
 
 In the next project, you will learn how to add a camera and implement FPV (First Person View) flight.
 
-[Continue to Project 04: FPV →](/tutorials/beginner/04-fpv)
+[Continue to Project 04: FPV →](/tutorials/en/beginner/04-fpv)

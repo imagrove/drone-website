@@ -1,5 +1,5 @@
 ---
-title: "Project 08: Multi-Drone Mesh Network"
+title: "Multi-Drone Mesh Network"
 description: "Build multi-drone communication networks to achieve information sharing and collaborative control."
 level: advanced
 order: 8
@@ -101,4 +101,4 @@ Congratulations! You have built multi-drone communication network, which is the 
 
 In the next project, you will learn how to implement multi-drone formation flight.
 
-[Continue to Project 09: Multi-Drone Formation →](/tutorials/advanced/09-formation)
+[Continue to Project 09: Multi-Drone Formation →](/tutorials/en/advanced/09-formation)

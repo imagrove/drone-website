@@ -1,5 +1,5 @@
 ---
-title: "Project 04: Path Planning Master"
+title: "Path Planning Master"
 description: "Use A* algorithm to implement drone autonomous path planning, avoiding known obstacles."
 level: advanced
 order: 4
@@ -110,4 +110,4 @@ Congratulations! You have implemented A* path planning algorithm, which is the c
 
 In the next project, you will learn how to develop real-time obstacle avoidance systems.
 
-[Continue to Project 05: Obstacle Avoidance Expert →](/tutorials/advanced/05-obstacle-avoidance)
+[Continue to Project 05: Obstacle Avoidance Expert →](/tutorials/en/advanced/05-obstacle-avoidance)

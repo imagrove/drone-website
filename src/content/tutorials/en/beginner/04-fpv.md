@@ -1,5 +1,5 @@
 ---
-title: "Project 04: FPV Flight"
+title: "FPV Flight"
 description: "Add a camera to the drone and implement First Person View (FPV) flight."
 level: beginner
 order: 4
@@ -137,4 +137,4 @@ Congratulations! You have implemented FPV flight, which is one of the most excit
 
 In the next project, you will learn how to implement target tracking functionality.
 
-[Continue to Project 05: Target Tracking →](/tutorials/beginner/05-tracking)
+[Continue to Project 05: Target Tracking →](/tutorials/en/beginner/05-tracking)

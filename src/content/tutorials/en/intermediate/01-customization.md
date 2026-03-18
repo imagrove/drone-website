@@ -1,5 +1,5 @@
 ---
-title: "Project 01: My Drone, My Definition"
+title: "My Drone, My Definition"
 description: "Modify the drone's takeoff sound effects, motor speed range, and LED lighting effects to understand the code structure."
 level: intermediate
 order: 1
@@ -101,4 +101,4 @@ Congratulations! You have successfully modified the drone's code and understood 
 
 In the next project, you will learn how to adjust PID parameters to make the drone fly more stably.
 
-[Continue to Project 02: PID Tuning →](/tutorials/intermediate/02-pid-tuning)
+[Continue to Project 02: PID Tuning →](/tutorials/en/intermediate/02-pid-tuning)

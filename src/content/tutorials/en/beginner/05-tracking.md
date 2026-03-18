@@ -1,5 +1,5 @@
 ---
-title: "Project 05: Target Tracking"
+title: "Target Tracking"
 description: "Use the camera to implement color target tracking, making the drone automatically follow a red ball."
 level: beginner
 order: 5
@@ -129,4 +129,4 @@ Congratulations! You have implemented target tracking functionality, which is an
 
 In the next project, you will learn how to implement multi-drone formation flight.
 
-[Continue to Project 06: Formation Flight →](/tutorials/beginner/06-formation)
+[Continue to Project 06: Formation Flight →](/tutorials/en/beginner/06-formation)

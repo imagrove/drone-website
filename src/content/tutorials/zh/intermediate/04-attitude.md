@@ -1,5 +1,5 @@
 ---
-title: "项目 04：姿态魔术师"
+title: "姿态魔术师"
 description: "读取 IMU 数据，用互补滤波算法计算无人机姿态，理解姿态估计原理。"
 level: intermediate
 order: 4
@@ -78,4 +78,4 @@ void sensfusion6UpdateQ(float gx, float gy, float gz, float ax, float ay, float 
 
 在下一个项目中，你将学习如何读取并分析传感器数据。
 
-[继续项目 05：数据魔法师 →](/zh/tutorials/intermediate/05-data-analysis)
+[继续项目 05：数据魔法师 →](/tutorials/zh/intermediate/05-data-analysis)

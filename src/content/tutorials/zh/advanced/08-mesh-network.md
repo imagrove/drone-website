@@ -1,5 +1,5 @@
 ---
-title: "项目 08：多机通信网络"
+title: "多机通信网络"
 description: "用 ESP-NOW 协议实现多无人机 MESH 网络，实现信息共享和协同决策。"
 level: advanced
 order: 8
@@ -99,4 +99,4 @@ void mesh_broadcast_data(uint8_t* data, size_t len) {
 
 在下一个项目中，你将学习如何实现多机编队飞行。
 
-[继续项目 09：多机编队 →](/zh/tutorials/advanced/09-formation)
+[继续项目 09：多机编队 →](/tutorials/zh/advanced/09-formation)

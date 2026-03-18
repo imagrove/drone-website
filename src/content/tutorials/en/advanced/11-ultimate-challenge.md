@@ -1,5 +1,5 @@
 ---
-title: "Project 11: Ultimate Challenge"
+title: "Autonomous Navigation and Obstacle Avoidance"
 description: "Complete the ultimate challenge: autonomous navigation in unknown indoor environment, including obstacle avoidance, path planning, target recognition and return."
 level: advanced
 order: 11

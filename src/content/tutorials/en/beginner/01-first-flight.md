@@ -1,5 +1,5 @@
 ---
-title: "Project 01: Birth of a Little Flyer"
+title: "Birth of a Little Flyer"
 description: "Assemble drone hardware and flash 'one-key takeoff' firmware, complete first flight."
 level: beginner
 order: 1
@@ -139,4 +139,4 @@ Congratulations! Your hand-assembled drone is flying! This is an exciting milest
 
 In the next project, you'll learn how to change different sound effects and LED effects for your drone, creating your own personalized aircraft.
 
-[Continue to Project 02: Customization →](/tutorials/beginner/02-customization)
+[Continue to Project 02: Customization →](/tutorials/en/beginner/02-customization)

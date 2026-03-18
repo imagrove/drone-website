@@ -1,5 +1,5 @@
 ---
-title: "项目 06：避障大师"
+title: "避障大师"
 description: "用超声波传感器实现前方避障功能，遇到障碍物自动减速或转向。"
 level: intermediate
 order: 6
@@ -110,4 +110,4 @@ if (distance < 50) { // 距离小于 50cm
 
 在下一个项目中，你将学习如何利用摄像头实现视觉识别功能。
 
-[继续项目 07：视觉工程师 →](/zh/tutorials/intermediate/07-vision)
+[继续项目 07：视觉工程师 →](/tutorials/zh/intermediate/07-vision)

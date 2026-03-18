@@ -1,5 +1,5 @@
 ---
-title: "项目 07：AI 识别"
+title: "AI 识别"
 description: "在 ESP32-S3 上部署 TinyYOLOv3 模型，实现简单的目标检测。"
 level: advanced
 order: 7
@@ -86,4 +86,4 @@ void yolo_detect(uint8_t* frame, int width, int height,
 
 在下一个项目中，你将学习如何实现多无人机 MESH 网络。
 
-[继续项目 08：多机通信网络 →](/zh/tutorials/advanced/08-mesh-network)
+[继续项目 08：多机通信网络 →](/tutorials/zh/advanced/08-mesh-network)

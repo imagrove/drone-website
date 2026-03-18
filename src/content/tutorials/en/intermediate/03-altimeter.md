@@ -1,5 +1,5 @@
 ---
-title: "Project 03: Altimeter Decryption"
+title: "Altimeter Decryption"
 description: "Read barometer data, calculate real altitude, and implement more precise altitude hold functionality."
 level: intermediate
 order: 3
@@ -99,4 +99,4 @@ Congratulations! You have mastered the use of the barometer and implemented prec
 
 In the next project, you will learn how to read IMU data and calculate drone attitude using complementary filtering algorithm.
 
-[Continue to Project 04: Attitude Magician →](/tutorials/intermediate/04-attitude)
+[Continue to Project 04: Attitude Magician →](/tutorials/en/intermediate/04-attitude)

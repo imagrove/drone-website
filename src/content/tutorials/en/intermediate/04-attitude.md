@@ -1,5 +1,5 @@
 ---
-title: "Project 04: Attitude Magician"
+title: "Attitude Magician"
 description: "Read IMU data, calculate drone attitude using complementary filtering algorithm, and understand attitude estimation principles."
 level: intermediate
 order: 4
@@ -78,4 +78,4 @@ Congratulations! You have mastered the core technology of attitude estimation an
 
 In the next project, you will learn how to read and analyze sensor data.
 
-[Continue to Project 05: Data Magician →](/tutorials/intermediate/05-data-analysis)
+[Continue to Project 05: Data Magician →](/tutorials/en/intermediate/05-data-analysis)

@@ -1,5 +1,5 @@
 ---
-title: "项目 06：目标追踪"
+title: "目标追踪"
 description: "用 OpenCV 库实现颜色目标的实时追踪，让无人机自动跟随。"
 level: advanced
 order: 6
@@ -117,4 +117,4 @@ if (target_x != -1) {
 
 在下一个项目中，你将学习如何在 ESP32-S3 上部署 AI 模型。
 
-[继续项目 07：AI 识别 →](/zh/tutorials/advanced/07-ai-recognition)
+[继续项目 07：AI 识别 →](/tutorials/zh/advanced/07-ai-recognition)

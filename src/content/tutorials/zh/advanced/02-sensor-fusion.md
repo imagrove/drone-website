@@ -1,5 +1,5 @@
 ---
-title: "项目 02：传感器融合专家"
+title: "传感器融合专家"
 description: "开发多传感器数据融合系统，提高无人机的状态估计精度。"
 level: advanced
 order: 2
@@ -111,4 +111,4 @@ void ekf_fuse_sensors(EKF_State *ekf,
 
 在下一个项目中，你将学习如何用摄像头的光流数据实现室内定位。
 
-[继续项目 03：视觉导航 →](/zh/tutorials/advanced/03-visual-navigation)
+[继续项目 03：视觉导航 →](/tutorials/zh/advanced/03-visual-navigation)

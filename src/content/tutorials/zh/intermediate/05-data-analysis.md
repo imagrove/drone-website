@@ -1,5 +1,5 @@
 ---
-title: "项目 05：数据魔法师"
+title: "数据魔法师"
 description: "读取无人机的传感器数据，并进行简单分析。"
 level: intermediate
 order: 5
@@ -81,4 +81,4 @@ lang: zh
 
 在下一个项目中，你将学习如何用超声波传感器实现避障功能。
 
-[继续项目 06：避障大师 →](/zh/tutorials/intermediate/06-obstacle-avoidance)
+[继续项目 06：避障大师 →](/tutorials/zh/intermediate/06-obstacle-avoidance)

@@ -1,5 +1,5 @@
 ---
-title: "项目 01：我的无人机我定义"
+title: "我的无人机我定义"
 description: "修改无人机的起飞音效、电机转速范围和 LED 灯效，理解代码结构。"
 level: intermediate
 order: 1
@@ -101,4 +101,4 @@ uint16_t tone[] = {330, 330, 392, 392, 440, 440, 392, 0}; // E4, E4, G4, G4, A4,
 
 在下一个项目中，你将学习如何调整 PID 参数，让无人机飞得更稳定。
 
-[继续项目 02：PID 调参挑战 →](/zh/tutorials/intermediate/02-pid-tuning)
+[继续项目 02：PID 调参挑战 →](/tutorials/zh/intermediate/02-pid-tuning)

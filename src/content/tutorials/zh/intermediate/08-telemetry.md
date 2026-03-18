@@ -1,5 +1,5 @@
 ---
-title: "项目 08：无线绘图板"
+title: "无线绘图板"
 description: "通过 Wi-Fi 将无人机的飞行数据回传到电脑，实时绘制曲线。"
 level: intermediate
 order: 8
@@ -92,4 +92,4 @@ python plotter.py
 
 在下一个项目中，你将学习如何实现两架无人机之间的通信。
 
-[继续项目 09：多机通信 →](/zh/tutorials/intermediate/09-multi-drone)
+[继续项目 09：多机通信 →](/tutorials/zh/intermediate/09-multi-drone)

@@ -1,5 +1,5 @@
 ---
-title: "项目 02：PID 调参挑战"
+title: "PID 调参挑战"
 description: "通过调整 PID 参数，让无人机在有风的环境下也能稳定悬停。"
 level: intermediate
 order: 2
@@ -102,4 +102,4 @@ float pid_update(PID_t* pid, float setpoint, float feedback) {
 
 在下一个项目中，你将学习如何读取气压计数据，实现更精准的定高功能。
 
-[继续项目 03：高度计解密 →](/zh/tutorials/intermediate/03-altimeter)
+[继续项目 03：高度计解密 →](/tutorials/zh/intermediate/03-altimeter)

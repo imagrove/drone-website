@@ -1,5 +1,5 @@
 ---
-title: "Project 06: Obstacle Avoidance Master"
+title: "Obstacle Avoidance Master"
 description: "Use ultrasonic sensors to implement front obstacle avoidance, automatically slowing down or turning when encountering obstacles."
 level: intermediate
 order: 6
@@ -110,4 +110,4 @@ Congratulations! You have implemented the drone's obstacle avoidance function, w
 
 In the next project, you will learn how to use the camera to implement simple visual recognition functions.
 
-[Continue to Project 07: Vision Engineer →](/tutorials/intermediate/07-vision)
+[Continue to Project 07: Vision Engineer →](/tutorials/en/intermediate/07-vision)

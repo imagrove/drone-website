@@ -1,5 +1,5 @@
 ---
-title: "项目 09：多机编队"
+title: "多机编队"
 description: "实现 3 架无人机的编队飞行，保持固定队形（如三角形）。"
 level: advanced
 order: 9
@@ -91,4 +91,4 @@ void follower_control(float leader_x, float leader_y, float leader_z,
 
 在下一个项目中，你将学习如何开发基于 AI 的视觉追踪和识别系统。
 
-[继续项目 10：智能任务 →](/zh/tutorials/advanced/10-intelligent-task)
+[继续项目 10：智能任务 →](/tutorials/zh/advanced/10-intelligent-task)

@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="zh"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>项目 04：我的眼睛 - ESP32 Drone Tutorial</title><meta name="description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><meta name="keywords" content="ESP32 drone, drone kit, STEM education, programmable drone, open source drone"><link rel="canonical" href="https://drone.imagrove.com/tutorials/zh/beginner/04-fpv/"><link rel="alternate" hreflang="x-default" href="https://drone.imagrove.com/"><link rel="alternate" hreflang="en" href="https://drone.imagrove.com/"><link rel="alternate" hreflang="zh" href="https://drone.imagrove.com/zh/"><!-- Open Graph --><meta property="og:title" content="项目 04：我的眼睛 - ESP32 Drone Tutorial"><meta property="og:description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><meta property="og:url" content="https://drone.imagrove.com/tutorials/zh/beginner/04-fpv/"><meta property="og:type" content="website"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="项目 04：我的眼睛 - ESP32 Drone Tutorial"><meta name="twitter:description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><style>:root{--primary: #1E293B;--primary-dark: #0F172A;--secondary: #64748B;--bg-light: #FAFAFA;--bg-white: #FFFFFF;--text-dark: #1E293B;--text-medium: #475569;--text-light: #94A3B8;--border: #E2E8F0;--shadow-sm: 0 1px 2px rgba(0,0,0,.04);--shadow: 0 4px 6px -1px rgba(0,0,0,.05);--radius: 8px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;background:var(--bg-light);color:var(--text-dark);line-height:1.7}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}@media(max-width:768px){.desktop-nav[data-astro-cid-3ef6ksr2],.desktop-lang[data-astro-cid-3ef6ksr2]{display:none!important}.mobile-menu-btn[data-astro-cid-3ef6ksr2],.mobile-menu[data-astro-cid-3ef6ksr2].active{display:block!important}}
-.tutorial-title[data-astro-cid-zj77745i]{margin:.5rem 0;font-size:2rem;color:var(--text-dark)}.tutorial-content[data-astro-cid-zj77745i] h2{margin-top:2rem;margin-bottom:1rem;font-size:1.5rem;color:var(--text-dark)}.tutorial-content[data-astro-cid-zj77745i] h3{margin-top:1.5rem;margin-bottom:.75rem;font-size:1.25rem;color:var(--text-dark)}.tutorial-content[data-astro-cid-zj77745i] p{margin-bottom:1rem}.tutorial-content[data-astro-cid-zj77745i] ul,.tutorial-content[data-astro-cid-zj77745i] ol{margin-bottom:1rem;padding-left:1.5rem}.tutorial-content[data-astro-cid-zj77745i] li{margin-bottom:.5rem}.tutorial-content[data-astro-cid-zj77745i] code{background:var(--bg-light);padding:.2rem .4rem;border-radius:4px;font-family:JetBrains Mono,monospace;font-size:.9em}.tutorial-content[data-astro-cid-zj77745i] pre{background:#1e293b;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow-x:auto;margin-bottom:1rem;max-width:100%}.tutorial-content[data-astro-cid-zj77745i] pre code{background:transparent;padding:0;white-space:pre;word-wrap:normal}.tutorial-content[data-astro-cid-zj77745i] table{width:100%;border-collapse:collapse;margin-bottom:1rem;overflow-x:auto;display:block}.tutorial-content[data-astro-cid-zj77745i] th,.tutorial-content[data-astro-cid-zj77745i] td{padding:.5rem;border:1px solid var(--border);text-align:left}.tutorial-main[data-astro-cid-zj77745i]{padding:2rem;max-width:800px}@media(max-width:768px){.tutorial-layout[data-astro-cid-zj77745i]{grid-template-columns:1fr!important}.sidebar-wrapper[data-astro-cid-zj77745i]{display:none;position:fixed;top:70px;left:0;bottom:0;width:280px;background:#fff;z-index:95;box-shadow:2px 0 8px #0000001a}.sidebar-wrapper[data-astro-cid-zj77745i].active{display:block}.mobile-sidebar-toggle[data-astro-cid-zj77745i]{display:flex!important;align-items:center;justify-content:center}.mobile-sidebar-overlay[data-astro-cid-zj77745i].active{display:block!important}.tutorial-main[data-astro-cid-zj77745i]{padding:1rem;max-width:100%}.tutorial-title[data-astro-cid-zj77745i]{font-size:1.5rem}.tutorial-content[data-astro-cid-zj77745i] h2{font-size:1.25rem}.tutorial-content[data-astro-cid-zj77745i] h3{font-size:1.1rem}}
-</style></head> <body>  <header style="background: white; border-bottom: 1px solid var(--border); padding: 1rem 2rem;" data-astro-cid-3ef6ksr2> <nav style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;" data-astro-cid-3ef6ksr2> <a href="/zh/" style="font-weight: 700; font-size: 1.25rem; color: var(--text-dark);" data-astro-cid-3ef6ksr2>ESP32 Drone</a> <!-- Desktop Navigation --> <div class="desktop-nav" style="display: flex; gap: 2rem;" data-astro-cid-3ef6ksr2> <a href="/zh/" style data-astro-cid-3ef6ksr2>首页</a> <a href="/zh/tutorials" style="font-weight: 600;" data-astro-cid-3ef6ksr2>教程</a> <a href="/zh/hardware" style data-astro-cid-3ef6ksr2>硬件</a> <a href="/zh/downloads" style data-astro-cid-3ef6ksr2>下载</a> </div> <!-- Desktop Language Switch --> <div class="desktop-lang" style="margin-left: 2rem;" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>EN</a> </div> <!-- Mobile Hamburger Button --> <button class="mobile-menu-btn" style="display: none; background: none; border: none; cursor: pointer; padding: 0.5rem;" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-3ef6ksr2> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-3ef6ksr2></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-3ef6ksr2></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-3ef6ksr2></line> </svg> </button> </nav> <!-- Mobile Menu --> <div class="mobile-menu" style="display: none; padding: 1rem 0; border-top: 1px solid var(--border); margin-top: 1rem;" data-astro-cid-3ef6ksr2> <div style="display: flex; flex-direction: column; gap: 1rem;" data-astro-cid-3ef6ksr2> <a href="/zh/" style data-astro-cid-3ef6ksr2>首页</a> <a href="/zh/tutorials" style="font-weight: 600;" data-astro-cid-3ef6ksr2>教程</a> <a href="/zh/hardware" style data-astro-cid-3ef6ksr2>硬件</a> <a href="/zh/downloads" style data-astro-cid-3ef6ksr2>下载</a> <a href="/" style="color: var(--text-light);" data-astro-cid-3ef6ksr2>EN</a> </div> </div> </header>  <script>
+<!DOCTYPE html><html lang="zh"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"><title>我的眼睛 - ESP32 Drone Tutorial</title><meta name="description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><meta name="keywords" content="ESP32 drone, drone kit, STEM education, programmable drone, open source drone"><meta name="theme-color" content="#1E293B"><link rel="canonical" href="https://drone.imagrove.com/tutorials/zh/beginner/04-fpv/"><link rel="alternate" hreflang="x-default" href="https://drone.imagrove.com/"><link rel="alternate" hreflang="en" href="https://drone.imagrove.com/"><link rel="alternate" hreflang="zh" href="https://drone.imagrove.com/zh/"><!-- Open Graph --><meta property="og:title" content="我的眼睛 - ESP32 Drone Tutorial"><meta property="og:description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><meta property="og:url" content="https://drone.imagrove.com/tutorials/zh/beginner/04-fpv/"><meta property="og:type" content="website"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="我的眼睛 - ESP32 Drone Tutorial"><meta name="twitter:description" content="给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"><style>:root{--primary: #1E293B;--primary-dark: #0F172A;--secondary: #64748B;--bg-light: #FAFAFA;--bg-white: #FFFFFF;--text-dark: #1E293B;--text-medium: #475569;--text-light: #94A3B8;--border: #E2E8F0;--shadow-sm: 0 1px 2px rgba(0,0,0,.04);--shadow: 0 4px 6px -1px rgba(0,0,0,.05);--radius: 8px;--font-size-base: 16px;--font-size-h1: clamp(1.5rem, 5vw, 2.5rem);--font-size-h2: clamp(1.25rem, 4vw, 2rem);--font-size-h3: clamp(1rem, 3vw, 1.5rem);--font-size-p: clamp(.9rem, 2.5vw, 1rem);--font-size-code: clamp(.8rem, 2.5vw, 1rem)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;background:var(--bg-light);color:var(--text-dark);line-height:1.7;font-size:var(--font-size-base);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a,button{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center}@media(hover:none)and (pointer:coarse){a:active,button:active{background:var(--primary);color:#fff;transform:scale(.98);transition:all .1s ease}}a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}h1{font-size:var(--font-size-h1);font-weight:700;margin-bottom:1rem}h2{font-size:var(--font-size-h2);font-weight:600;margin-bottom:.75rem}h3{font-size:var(--font-size-h3);font-weight:600;margin-bottom:.5rem}p{font-size:var(--font-size-p);margin-bottom:1rem}pre,code{font-size:var(--font-size-code);font-family:Monaco,Menlo,Ubuntu Mono,monospace;background:var(--bg-light);border-radius:var(--radius);padding:1rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word}pre{margin:1rem 0;max-height:400px;overflow-y:auto}code{padding:.2rem .4rem}table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:var(--font-size-p)}th,td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--border)}th{font-weight:600;background:var(--bg-light)}@media(max-width:768px){table{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}table::-webkit-scrollbar{height:4px}table::-webkit-scrollbar-thumb{background:var(--secondary);border-radius:2px}}img{max-width:100%;height:auto;display:block;margin:1rem 0;border-radius:var(--radius)}ul,ol{margin:1rem 0;padding-left:1.5rem}li{margin-bottom:.5rem;font-size:var(--font-size-p)}blockquote{border-left:4px solid var(--primary);padding:1rem;margin:1rem 0;background:var(--bg-light);border-radius:var(--radius)}hr{border:none;border-top:1px solid var(--border);margin:2rem 0}@media(max-width:768px){:root{--font-size-base: 18px}body{line-height:1.8}}@media(min-width:769px)and (max-width:1024px){:root{--font-size-base: 17px}}@media(max-width:768px){.desktop-nav[data-astro-cid-3ef6ksr2],.desktop-lang[data-astro-cid-3ef6ksr2]{display:none!important}.mobile-menu-btn[data-astro-cid-3ef6ksr2],.mobile-menu[data-astro-cid-3ef6ksr2].active{display:block!important}}.footer-container[data-astro-cid-sz7xmlte]{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem}.footer-title[data-astro-cid-sz7xmlte]{margin:0;font-size:1.2rem;font-weight:600}.footer-links[data-astro-cid-sz7xmlte]{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}.footer-link[data-astro-cid-sz7xmlte]{color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem;font-size:.95rem}.footer-link[data-astro-cid-sz7xmlte]:hover{opacity:.8}.copyright[data-astro-cid-sz7xmlte]{margin:.5rem 0 0;font-size:.85rem;opacity:.7}@media(max-width:768px){.footer-links[data-astro-cid-sz7xmlte]{flex-direction:column;gap:.75rem}}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.BRSErKcR.css"></head> <body>  <header style="background: white; border-bottom: 1px solid var(--border); padding: 1rem 2rem;" data-astro-cid-3ef6ksr2> <nav style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;" data-astro-cid-3ef6ksr2> <a href="/zh/" style="font-weight: 700; font-size: 1.25rem; color: var(--text-dark);" data-astro-cid-3ef6ksr2>ESP32 Drone</a> <!-- Desktop Navigation --> <div class="desktop-nav" style="display: flex; gap: 2rem;" data-astro-cid-3ef6ksr2> <a href="/zh/" style data-astro-cid-3ef6ksr2>首页</a> <a href="/zh/tutorials" style="font-weight: 600;" data-astro-cid-3ef6ksr2>教程</a> <a href="/zh/hardware" style data-astro-cid-3ef6ksr2>硬件</a> <a href="/zh/downloads" style data-astro-cid-3ef6ksr2>下载</a> </div> <!-- Desktop Language Switch --> <div class="desktop-lang" style="margin-left: 2rem;" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>EN</a> </div> <!-- Mobile Hamburger Button --> <button class="mobile-menu-btn" style="display: none; background: none; border: none; cursor: pointer; padding: 0.5rem;" aria-label="Toggle menu" data-astro-cid-3ef6ksr2> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-3ef6ksr2> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-3ef6ksr2></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-3ef6ksr2></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-3ef6ksr2></line> </svg> </button> </nav> <!-- Mobile Menu --> <div class="mobile-menu" style="display: none; padding: 1rem 0; border-top: 1px solid var(--border); margin-top: 1rem;" data-astro-cid-3ef6ksr2> <div style="display: flex; flex-direction: column; gap: 1rem;" data-astro-cid-3ef6ksr2> <a href="/zh/" style data-astro-cid-3ef6ksr2>首页</a> <a href="/zh/tutorials" style="font-weight: 600;" data-astro-cid-3ef6ksr2>教程</a> <a href="/zh/hardware" style data-astro-cid-3ef6ksr2>硬件</a> <a href="/zh/downloads" style data-astro-cid-3ef6ksr2>下载</a> <a href="/" style="color: var(--text-light);" data-astro-cid-3ef6ksr2>EN</a> </div> </div> </header>  <script>
     (function() {
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const mobileMenu = document.querySelector('.mobile-menu');
@@ -11,241 +11,70 @@
             });
         }
     })();
-</script>  <button class="mobile-sidebar-toggle" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 100; background: var(--primary); color: white; border: none; border-radius: 50%; width: 56px; height: 56px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); cursor: pointer;" aria-label="Toggle sidebar" data-astro-cid-zj77745i> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: auto;" data-astro-cid-zj77745i> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-zj77745i></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-zj77745i></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-zj77745i></line> </svg> </button>  <div class="mobile-sidebar-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 90;" data-astro-cid-zj77745i></div> <div class="tutorial-layout" style="display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 70px);" data-astro-cid-zj77745i> <div class="sidebar-wrapper" data-astro-cid-zj77745i> <aside style="border-right: 1px solid var(--border); padding: 1.5rem; height: calc(100vh - 70px); overflow-y: auto; position: sticky; top: 70px;"> <nav> <div style="margin-bottom: 0.5rem;" class="level-group" data-level="beginner" data-expanded="true"> <button class="level-toggle" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; background: transparent; border: none; cursor: pointer; font-size: 0.85rem; text-transform: uppercase; color: var(--text-light); font-weight: 600; border-radius: var(--radius);" onclick="toggleLevel('beginner')"> <span>初级：飞行小能手</span> <span class="toggle-icon" style="transition: transform 0.2s;">▼</span> </button> <ul class="tutorial-list" style="list-style: none; padding: 0; margin: 0.5rem 0 1rem 0; overflow: hidden; transition: max-height 0.3s ease; max-height: 500px;"> <li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/beginner/01-first-flight" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 01. 项目 01：小飞侠诞生 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/beginner/02-customization" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 02. 项目 02：个性小飞机 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/beginner/03-path-planning" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 03. 项目 03：空中画家 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/beginner/04-fpv" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--primary);
-                      background: var(--bg-light);
-                      font-weight: 600;
-                      text-decoration: none;
-                    "> 04. 项目 04：我的眼睛 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/beginner/05-tracking" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 05. 项目 05：跟屁虫 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/beginner/06-formation" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 06. 项目 06：小队集合 </a> </li> </ul> </div><div style="margin-bottom: 0.5rem;" class="level-group" data-level="intermediate" data-expanded="false"> <button class="level-toggle" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; background: transparent; border: none; cursor: pointer; font-size: 0.85rem; text-transform: uppercase; color: var(--text-light); font-weight: 600; border-radius: var(--radius);" onclick="toggleLevel('intermediate')"> <span>中级：飞行工程师</span> <span class="toggle-icon" style="transition: transform 0.2s;">▶</span> </button> <ul class="tutorial-list" style="list-style: none; padding: 0; margin: 0.5rem 0 1rem 0; overflow: hidden; transition: max-height 0.3s ease; max-height: 0px;"> <li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/01-customization" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 01. 项目 01：我的无人机我定义 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/02-pid-tuning" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 02. 项目 02：PID 调参挑战 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/03-altimeter" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 03. 项目 03：高度计解密 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/04-attitude" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 04. 项目 04：姿态魔术师 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/05-data-analysis" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 05. 项目 05：数据魔法师 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/06-obstacle-avoidance" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 06. 项目 06：避障大师 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/07-vision" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 07. 项目 07：视觉工程师 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/08-telemetry" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 08. 项目 08：无线绘图板 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/intermediate/09-multi-drone" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 09. 项目 09：多机通信 </a> </li> </ul> </div><div style="margin-bottom: 0.5rem;" class="level-group" data-level="advanced" data-expanded="false"> <button class="level-toggle" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; background: transparent; border: none; cursor: pointer; font-size: 0.85rem; text-transform: uppercase; color: var(--text-light); font-weight: 600; border-radius: var(--radius);" onclick="toggleLevel('advanced')"> <span>高级：飞行科学家</span> <span class="toggle-icon" style="transition: transform 0.2s;">▶</span> </button> <ul class="tutorial-list" style="list-style: none; padding: 0; margin: 0.5rem 0 1rem 0; overflow: hidden; transition: max-height 0.3s ease; max-height: 0px;"> <li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/01-advanced-control" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 01. 项目 01：控制大师 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/02-sensor-fusion" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 02. 项目 02：传感器融合专家 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/03-visual-navigation" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 03. 项目 03：视觉导航 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/04-path-planning" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 04. 项目 04：路径规划大师 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/05-obstacle-avoidance" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 05. 项目 05：避障高手 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/06-target-tracking" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 06. 项目 06：目标追踪 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/07-ai-recognition" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 07. 项目 07：AI 识别 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/08-mesh-network" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 08. 项目 08：多机通信网络 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/09-formation" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 09. 项目 09：多机编队 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/10-intelligent-task" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 10. 项目 10：智能任务 </a> </li><li style="margin-bottom: 0.25rem;"> <a href="/tutorials/zh/advanced/11-ultimate-challenge" style="
-                      display: block;
-                      padding: 0.4rem 0.75rem;
-                      border-radius: var(--radius);
-                      font-size: 0.9rem;
-                      color: var(--text-medium);
-                      background: transparent;
-                      font-weight: 400;
-                      text-decoration: none;
-                    "> 11. 项目 11：终极挑战 —— 自主导航与避障系统 </a> </li> </ul> </div> </nav> </aside> <script>
+</script> <div class="swipe-hint" data-astro-cid-ayau5may>
+← Swipe for prev/next tutorial →
+</div> <script>
+  (function() {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 100;
+    const hint = document.querySelector('.swipe-hint');
+    let hintShown = false;
+
+    // Show hint on first touch
+    document.addEventListener('touchstart', function() {
+      if (!hintShown) {
+        hint.classList.add('visible');
+        hintShown = true;
+        setTimeout(() => {
+          hint.classList.remove('visible');
+        }, 3000);
+      }
+    });
+
+    // Handle swipe gestures
+    document.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        // Get current tutorial index
+        const currentPath = window.location.pathname;
+        const tutorialLinks = document.querySelectorAll('.tutorial-link');
+        let currentIndex = -1;
+        
+        tutorialLinks.forEach((link, index) => {
+          if (link.getAttribute('href') === currentPath) {
+            currentIndex = index;
+          }
+        });
+
+        // Swipe right - previous tutorial
+        if (diff > 0 && currentIndex > 0) {
+          const prevLink = tutorialLinks[currentIndex - 1];
+          if (prevLink) {
+            window.location.href = prevLink.getAttribute('href');
+          }
+        }
+        // Swipe left - next tutorial
+        else if (diff < 0 && currentIndex < tutorialLinks.length - 1) {
+          const nextLink = tutorialLinks[currentIndex + 1];
+          if (nextLink) {
+            window.location.href = nextLink.getAttribute('href');
+          }
+        }
+      }
+    }
+  })();
+</script>  <button class="mobile-sidebar-toggle" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 100; background: var(--primary); color: white; border: none; border-radius: 50%; width: 56px; height: 56px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); cursor: pointer;" aria-label="Toggle sidebar" data-astro-cid-zj77745i> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: auto;" data-astro-cid-zj77745i> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-zj77745i></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-zj77745i></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-zj77745i></line> </svg> </button>  <div class="mobile-sidebar-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 90;" data-astro-cid-zj77745i></div> <div class="tutorial-layout" style="display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 70px);" data-astro-cid-zj77745i> <div class="sidebar-wrapper" data-astro-cid-zj77745i> <!-- Mobile Toggle Button --><button class="sidebar-toggle mobile-only" aria-label="Toggle sidebar" data-astro-cid-cca4qjef> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-cca4qjef> <line x1="3" y1="6" x2="21" y2="6" data-astro-cid-cca4qjef></line> <line x1="3" y1="12" x2="21" y2="12" data-astro-cid-cca4qjef></line> <line x1="3" y1="18" x2="21" y2="18" data-astro-cid-cca4qjef></line> </svg> </button> <!-- Overlay --> <div class="sidebar-overlay mobile-only" data-astro-cid-cca4qjef></div> <!-- Sidebar --> <aside class="sidebar" data-astro-cid-cca4qjef> <nav data-astro-cid-cca4qjef> <div class="level-group" data-level="beginner" data-expanded="false" data-astro-cid-cca4qjef> <button class="level-toggle" onclick="toggleLevel('beginner')" data-astro-cid-cca4qjef> <span data-astro-cid-cca4qjef>初级：飞行小能手</span> <span class="toggle-icon" data-astro-cid-cca4qjef>▶</span> </button> <ul class="tutorial-list" data-astro-cid-cca4qjef> <li data-astro-cid-cca4qjef> <a href="/tutorials/zh/beginner/01-first-flight" class="tutorial-link " data-astro-cid-cca4qjef> 01. 小飞侠诞生 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/beginner/02-customization" class="tutorial-link " data-astro-cid-cca4qjef> 02. 个性小飞机 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/beginner/03-path-planning" class="tutorial-link " data-astro-cid-cca4qjef> 03. 空中画家 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/beginner/04-fpv" class="tutorial-link active" data-astro-cid-cca4qjef> 04. 我的眼睛 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/beginner/05-tracking" class="tutorial-link " data-astro-cid-cca4qjef> 05. 跟屁虫 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/beginner/06-formation" class="tutorial-link " data-astro-cid-cca4qjef> 06. 小队集合 </a> </li> </ul> </div><div class="level-group" data-level="intermediate" data-expanded="false" data-astro-cid-cca4qjef> <button class="level-toggle" onclick="toggleLevel('intermediate')" data-astro-cid-cca4qjef> <span data-astro-cid-cca4qjef>中级：飞行工程师</span> <span class="toggle-icon" data-astro-cid-cca4qjef>▶</span> </button> <ul class="tutorial-list" data-astro-cid-cca4qjef> <li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/01-customization" class="tutorial-link " data-astro-cid-cca4qjef> 01. 我的无人机我定义 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/02-pid-tuning" class="tutorial-link " data-astro-cid-cca4qjef> 02. PID 调参挑战 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/03-altimeter" class="tutorial-link " data-astro-cid-cca4qjef> 03. 高度计解密 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/04-attitude" class="tutorial-link " data-astro-cid-cca4qjef> 04. 姿态魔术师 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/05-data-analysis" class="tutorial-link " data-astro-cid-cca4qjef> 05. 数据魔法师 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/06-obstacle-avoidance" class="tutorial-link " data-astro-cid-cca4qjef> 06. 避障大师 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/07-vision" class="tutorial-link " data-astro-cid-cca4qjef> 07. 视觉工程师 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/08-telemetry" class="tutorial-link " data-astro-cid-cca4qjef> 08. 无线绘图板 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/intermediate/09-multi-drone" class="tutorial-link " data-astro-cid-cca4qjef> 09. 多机通信 </a> </li> </ul> </div><div class="level-group" data-level="advanced" data-expanded="false" data-astro-cid-cca4qjef> <button class="level-toggle" onclick="toggleLevel('advanced')" data-astro-cid-cca4qjef> <span data-astro-cid-cca4qjef>高级：飞行科学家</span> <span class="toggle-icon" data-astro-cid-cca4qjef>▶</span> </button> <ul class="tutorial-list" data-astro-cid-cca4qjef> <li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/01-advanced-control" class="tutorial-link " data-astro-cid-cca4qjef> 01. 控制大师 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/02-sensor-fusion" class="tutorial-link " data-astro-cid-cca4qjef> 02. 传感器融合专家 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/03-visual-navigation" class="tutorial-link " data-astro-cid-cca4qjef> 03. 视觉导航 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/04-path-planning" class="tutorial-link " data-astro-cid-cca4qjef> 04. 路径规划大师 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/05-obstacle-avoidance" class="tutorial-link " data-astro-cid-cca4qjef> 05. 避障高手 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/06-target-tracking" class="tutorial-link " data-astro-cid-cca4qjef> 06. 目标追踪 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/07-ai-recognition" class="tutorial-link " data-astro-cid-cca4qjef> 07. AI 识别 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/08-mesh-network" class="tutorial-link " data-astro-cid-cca4qjef> 08. 多机通信网络 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/09-formation" class="tutorial-link " data-astro-cid-cca4qjef> 09. 多机编队 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/10-intelligent-task" class="tutorial-link " data-astro-cid-cca4qjef> 10. 智能任务 </a> </li><li data-astro-cid-cca4qjef> <a href="/tutorials/zh/advanced/11-ultimate-challenge" class="tutorial-link " data-astro-cid-cca4qjef> 11. 自主导航与避障 </a> </li> </ul> </div> </nav> </aside>  <script>
   window.toggleLevel = function(level) {
     const group = document.querySelector('[data-level="' + level + '"]');
     if (group) {
@@ -255,17 +84,62 @@
       
       if (isExpanded) {
         group.setAttribute('data-expanded', 'false');
-        if (list) list.style.maxHeight = '0';
+        if (list) list.classList.remove('expanded');
         if (icon) icon.textContent = '▶';
+        // 保存状态到 localStorage
+        localStorage.setItem('sidebar-level-' + level, 'collapsed');
       } else {
         group.setAttribute('data-expanded', 'true');
-        if (list) list.style.maxHeight = '500px';
+        if (list) list.classList.add('expanded');
         if (icon) icon.textContent = '▼';
+        // 保存状态到 localStorage
+        localStorage.setItem('sidebar-level-' + level, 'expanded');
       }
     }
   };
+
+  (function() {
+    // 恢复侧边栏展开状态
+    const levels = ['beginner', 'intermediate', 'advanced'];
+    levels.forEach(function(level) {
+      const savedState = localStorage.getItem('sidebar-level-' + level);
+      const group = document.querySelector('[data-level="' + level + '"]');
+      if (group && savedState) {
+        const list = group.querySelector('.tutorial-list');
+        const icon = group.querySelector('.toggle-icon');
+        
+        if (savedState === 'expanded') {
+          group.setAttribute('data-expanded', 'true');
+          if (list) list.classList.add('expanded');
+          if (icon) icon.textContent = '▼';
+        } else {
+          group.setAttribute('data-expanded', 'false');
+          if (list) list.classList.remove('expanded');
+          if (icon) icon.textContent = '▶';
+        }
+      }
+    });
+
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.sidebar-overlay');
+    
+    if (toggleBtn && sidebar && overlay) {
+      toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+      });
+      
+      overlay.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+  })();
 </script> </div> <!-- Content --> <main class="tutorial-main" data-astro-cid-zj77745i> <div style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);" data-astro-cid-zj77745i> <span style="font-size: 0.85rem; color: var(--text-light); text-transform: uppercase;" data-astro-cid-zj77745i> beginner Level
-</span> <h1 class="tutorial-title" data-astro-cid-zj77745i>项目 04：我的眼睛</h1> <p style="color: var(--text-medium); font-size: 1.1rem;" data-astro-cid-zj77745i>给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。</p> <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);" data-astro-cid-zj77745i> <span data-astro-cid-zj77745i>⏱️ 1 小时</span> <span data-astro-cid-zj77745i>📋 已完成项目 03：空中画家</span> </div> </div> <article class="tutorial-content" style="line-height: 1.8; font-size: 1rem;" data-astro-cid-zj77745i> <h2 id="概述">概述</h2>
+</span> <h1 class="tutorial-title" data-astro-cid-zj77745i>我的眼睛</h1> <p style="color: var(--text-medium); font-size: 1.1rem;" data-astro-cid-zj77745i>给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。</p> <div style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);" data-astro-cid-zj77745i> <span data-astro-cid-zj77745i>⏱️ 1 小时</span> <span data-astro-cid-zj77745i>📋 已完成项目 03：空中画家</span> </div> </div> <article class="tutorial-content" style="line-height: 1.8; font-size: 1rem;" data-astro-cid-zj77745i> <h2 id="概述">概述</h2>
 <p>现在你已经学会了如何让无人机成为空中画家，接下来让我们给它安装一双眼睛！在本项目中，你将学习如何给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。</p>
 <h2 id="你将学到什么">你将学到什么</h2>
 <ul>
@@ -381,10 +255,33 @@
 <p>恭喜你！你的无人机现在有了一双眼睛！通过安装摄像头并体验第一人称视角，你已经进入了无人机飞行的新境界。现在你可以像飞行员一样，从无人机的视角看世界，这是一种非常神奇的体验。</p>
 <h2 id="下一步">下一步</h2>
 <p>在下一个项目中，你将学习如何让无人机自动追踪红色小球，成为你的”跟屁虫”，体验更智能的飞行功能。</p>
-<p><a href="/zh/tutorials/beginner/05-tracking">继续项目 05：跟屁虫 →</a></p> </article> <!-- Navigation --> <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between;" data-astro-cid-zj77745i> <a href="/zh/tutorials" style="color: var(--text-medium);" data-astro-cid-zj77745i>← 教程</a> </div> </main> </div> <footer style="background: var(--primary); color: white; padding: 2rem; margin-top: 4rem;"> <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;"> <!-- Contact --> <div> <h4 style="margin-bottom: 1rem; font-size: 1.1rem;">Contact Us</h4> <div style="display: flex; flex-direction: column; gap: 0.5rem;"> <a href="https://wa.me/8618601106543" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;"> <span>📱</span> WhatsApp: +86 18601106543
-</a> <div style="display: flex; align-items: center; gap: 0.5rem;"> <span>💬</span> WeChat: +86 18601106543
-</div> </div> </div> <!-- Social --> <div> <h4 style="margin-bottom: 1rem; font-size: 1.1rem;">YouTube</h4> <a href="https://www.youtube.com/@imagrove" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;"> <span>▶️</span> @imagrove
-</a> </div> <!-- Copyright --> <div style="display: flex; align-items: flex-end;"> <p style="font-size: 0.9rem; opacity: 0.8;">© 2026 ESP32 Drone. All rights reserved.</p> </div> </div> </footer>  </body></html>  <script>
+<p><a href="/tutorials/zh/beginner/05-tracking">继续项目 05：跟屁虫 →</a></p> </article> <!-- Navigation --> <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between;" data-astro-cid-zj77745i> <a href="/zh/tutorials" style="color: var(--text-medium);" data-astro-cid-zj77745i>← 教程</a> </div> </main> </div> <footer style="background: var(--primary); color: white; padding: 2rem; margin-top: 4rem;" data-astro-cid-sz7xmlte> <div class="footer-container" data-astro-cid-sz7xmlte> <!-- 第一行：联系我们 --> <h4 class="footer-title" data-astro-cid-sz7xmlte>Contact Us</h4> <!-- 第二行：YouTube WhatsApp 微信 --> <div class="footer-links" data-astro-cid-sz7xmlte> <a href="https://www.youtube.com/@imagrove" target="_blank" class="footer-link" data-astro-cid-sz7xmlte> <span data-astro-cid-sz7xmlte>▶️</span> YouTube
+</a> <a href="https://wa.me/8618601106543" target="_blank" class="footer-link" data-astro-cid-sz7xmlte> <span data-astro-cid-sz7xmlte>📱</span> WhatsApp: +86 18601106543
+</a> <div class="footer-link" data-astro-cid-sz7xmlte> <span data-astro-cid-sz7xmlte>💬</span> WeChat: +86 18601106543
+</div> </div> <!-- 第三行：版权信息 --> <p class="copyright" data-astro-cid-sz7xmlte>© 2026 ESP32 Drone. All rights reserved.</p> </div> </footer>  <button class="back-to-top" aria-label="Back to top" data-astro-cid-wlspcwf4> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-wlspcwf4> <polyline points="18 15 12 9 6 15" data-astro-cid-wlspcwf4></polyline> </svg> </button>  <script>
+  (function() {
+    const backToTopBtn = document.querySelector('.back-to-top');
+    
+    if (backToTopBtn) {
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+      
+      // Smooth scroll to top
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  })();
+</script>  </body></html>  <script>
     (function() {
         const toggleBtn = document.querySelector('.mobile-sidebar-toggle');
         const sidebar = document.querySelector('.sidebar-wrapper');

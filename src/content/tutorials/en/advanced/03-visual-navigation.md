@@ -1,5 +1,5 @@
 ---
-title: "Project 03: Visual Navigation"
+title: "Visual Navigation"
 description: "Use camera optical flow data for indoor positioning without GPS."
 level: advanced
 order: 3
@@ -109,4 +109,4 @@ Congratulations! You have implemented visual navigation system, which is the key
 
 In the next project, you will learn how to use A* algorithm for drone autonomous path planning.
 
-[Continue to Project 04: Path Planning Master →](/tutorials/advanced/04-path-planning)
+[Continue to Project 04: Path Planning Master →](/tutorials/en/advanced/04-path-planning)

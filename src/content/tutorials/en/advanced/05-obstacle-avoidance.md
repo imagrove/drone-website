@@ -1,5 +1,5 @@
 ---
-title: "Project 05: Obstacle Avoidance Expert"
+title: "Obstacle Avoidance Expert"
 description: "Develop real-time obstacle avoidance systems to automatically avoid obstacles during flight."
 level: advanced
 order: 5
@@ -95,4 +95,4 @@ Congratulations! You have implemented real-time obstacle avoidance system, which
 
 In the next project, you will learn how to use OpenCV library for real-time color target tracking.
 
-[Continue to Project 06: Target Tracking →](/tutorials/advanced/06-target-tracking)
+[Continue to Project 06: Target Tracking →](/tutorials/en/advanced/06-target-tracking)

@@ -1,5 +1,5 @@
 ---
-title: "项目 05：跟屁虫"
+title: "跟屁虫"
 description: "让无人机自动追踪红色小球，成为你的'跟屁虫'，体验更智能的飞行功能。"
 level: beginner
 order: 5
@@ -95,4 +95,4 @@ lang: zh
 
 在下一个项目中，你将学习如何用两架无人机组成小队，一起飞行，体验多机编队的乐趣。
 
-[继续项目 06：小队集合 →](/zh/tutorials/beginner/06-formation)
+[继续项目 06：小队集合 →](/tutorials/zh/beginner/06-formation)

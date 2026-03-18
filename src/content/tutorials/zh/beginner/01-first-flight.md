@@ -1,5 +1,5 @@
 ---
-title: "项目 01：小飞侠诞生"
+title: "小飞侠诞生"
 description: "组装无人机硬件，并烧录'一键起飞'固件，完成第一次飞行。"
 level: beginner
 order: 1
@@ -139,4 +139,4 @@ lang: zh
 
 在下一个项目中，你将学习如何给无人机更换不同的音效和灯效，打造专属个性飞机。
 
-[继续项目 02：个性小飞机 →](/zh/tutorials/beginner/02-customization)
+[继续项目 02：个性小飞机 →](/tutorials/zh/beginner/02-customization)

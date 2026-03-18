@@ -1,5 +1,5 @@
 ---
-title: "项目 11：终极挑战 —— 自主导航与避障系统"
+title: "自主导航与避障"
 description: "整合前面所学的所有知识，实现一个完整的自主导航避障系统。"
 level: advanced
 order: 11

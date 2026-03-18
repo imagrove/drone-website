@@ -1,5 +1,5 @@
 ---
-title: "Project 07: Vision Engineer"
+title: "Vision Engineer"
 description: "Use ESP32-S3 camera interface to implement simple visual recognition functions."
 level: intermediate
 order: 7
@@ -103,4 +103,4 @@ Congratulations! You have implemented the drone's visual recognition function, w
 
 In the next project, you will learn how to transmit the drone's flight data back to the computer via Wi-Fi.
 
-[Continue to Project 08: Wireless Plotter →](/tutorials/intermediate/08-telemetry)
+[Continue to Project 08: Wireless Plotter →](/tutorials/en/intermediate/08-telemetry)

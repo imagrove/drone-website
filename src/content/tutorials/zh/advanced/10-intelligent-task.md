@@ -1,5 +1,5 @@
 ---
-title: "项目 10：智能任务"
+title: "智能任务"
 description: "开发基于 AI 的视觉追踪和识别系统，让无人机实现人脸追踪、物体识别等智能任务。"
 level: advanced
 order: 10
@@ -97,4 +97,4 @@ void faceTracking() {
 
 在下一个项目中，你将整合所有知识，实现终极挑战：自主导航与避障系统。
 
-[继续项目 11：终极挑战 →](/zh/tutorials/advanced/11-ultimate-challenge)
+[继续项目 11：终极挑战 →](/tutorials/zh/advanced/11-ultimate-challenge)

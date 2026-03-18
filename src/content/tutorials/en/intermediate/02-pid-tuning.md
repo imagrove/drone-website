@@ -1,5 +1,5 @@
 ---
-title: "Project 02: PID Tuning Challenge"
+title: "PID Tuning Challenge"
 description: "Adjust PID parameters to make the drone hover stably even in windy conditions."
 level: intermediate
 order: 2
@@ -102,4 +102,4 @@ Congratulations! You have mastered the basic methods of PID tuning, which is a c
 
 In the next project, you will learn how to read barometer data for more precise altitude hold.
 
-[Continue to Project 03: Altimeter Decryption →](/tutorials/intermediate/03-altimeter)
+[Continue to Project 03: Altimeter Decryption →](/tutorials/en/intermediate/03-altimeter)

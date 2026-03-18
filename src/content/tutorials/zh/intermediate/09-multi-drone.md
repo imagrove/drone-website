@@ -1,5 +1,5 @@
 ---
-title: "项目 09：多机通信"
+title: "多机通信"
 description: "实现两架无人机之间的简单通信，了解无线通信原理。"
 level: intermediate
 order: 9
@@ -104,4 +104,4 @@ void onDataRecv(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
 
 你已经准备好进入高级教材，学习更复杂的算法和系统集成。
 
-[进入高级教材 →](/zh/tutorials/advanced/01-advanced-control)
+[进入高级教材 →](/tutorials/zh/advanced/01-advanced-control)

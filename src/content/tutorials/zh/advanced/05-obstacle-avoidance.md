@@ -1,5 +1,5 @@
 ---
-title: "项目 05：避障高手"
+title: "避障高手"
 description: "开发实时避障系统，让无人机在飞行过程中自动避开障碍物。"
 level: advanced
 order: 5
@@ -95,4 +95,4 @@ void obstacleAvoidance() {
 
 在下一个项目中，你将学习如何用 OpenCV 库实现颜色目标的实时追踪。
 
-[继续项目 06：目标追踪 →](/zh/tutorials/advanced/06-target-tracking)
+[继续项目 06：目标追踪 →](/tutorials/zh/advanced/06-target-tracking)

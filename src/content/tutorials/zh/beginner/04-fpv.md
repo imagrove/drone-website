@@ -1,5 +1,5 @@
 ---
-title: "项目 04：我的眼睛"
+title: "我的眼睛"
 description: "给无人机安装摄像头，通过手机看到无人机的视角，体验第一人称飞行的乐趣。"
 level: beginner
 order: 4
@@ -112,4 +112,4 @@ lang: zh
 
 在下一个项目中，你将学习如何让无人机自动追踪红色小球，成为你的"跟屁虫"，体验更智能的飞行功能。
 
-[继续项目 05：跟屁虫 →](/zh/tutorials/beginner/05-tracking)
+[继续项目 05：跟屁虫 →](/tutorials/zh/beginner/05-tracking)

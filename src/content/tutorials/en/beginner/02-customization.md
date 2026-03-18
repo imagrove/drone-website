@@ -1,5 +1,5 @@
 ---
-title: "Project 02: Customization"
+title: "Customization"
 description: "Modify the drone's takeoff sound effects, motor speed range, and LED lighting effects to understand the code structure."
 level: beginner
 order: 2
@@ -101,4 +101,4 @@ Congratulations! You have successfully modified the drone's code and understood 
 
 In the next project, you will learn how to adjust PID parameters to make the drone fly more stably.
 
-[Continue to Project 03: PID Tuning →](/tutorials/beginner/03-path-planning)
+[Continue to Project 03: Path Planning →](/tutorials/en/beginner/03-path-planning)

@@ -1,5 +1,5 @@
 ---
-title: "项目 06：小队集合"
+title: "小队集合"
 description: "用两架无人机组成小队，一起飞行，体验多机编队的乐趣。"
 level: beginner
 order: 6
@@ -117,4 +117,4 @@ lang: zh
 
 这些技能为你打下了坚实的基础，你可以继续探索中级和高级教程，学习更多高级功能和技术。
 
-[查看中级教程 →](/zh/tutorials/intermediate)
+[查看中级教程 →](/tutorials/zh/intermediate)

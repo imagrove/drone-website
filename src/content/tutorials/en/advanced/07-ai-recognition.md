@@ -1,5 +1,5 @@
 ---
-title: "Project 07: AI Recognition"
+title: "AI Recognition"
 description: "Deploy TinyYOLOv3 model on ESP32-S3 for object detection."
 level: advanced
 order: 7
@@ -97,4 +97,4 @@ Congratulations! You have successfully deployed AI object detection model on ESP
 
 In the next project, you will learn how to build multi-drone communication networks.
 
-[Continue to Project 08: Multi-Drone Mesh Network →](/tutorials/advanced/08-mesh-network)
+[Continue to Project 08: Multi-Drone Mesh Network →](/tutorials/en/advanced/08-mesh-network)

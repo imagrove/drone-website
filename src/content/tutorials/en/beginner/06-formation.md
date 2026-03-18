@@ -1,5 +1,5 @@
 ---
-title: "Project 06: Formation Flight"
+title: "Formation Flight"
 description: "Use ESP-NOW protocol to achieve simple formation flight between two drones."
 level: beginner
 order: 6
@@ -123,4 +123,4 @@ Congratulations! You have completed all beginner projects and mastered the basic
 
 You are now ready to enter the intermediate level and learn more advanced programming and debugging skills.
 
-[Enter Intermediate Level →](/tutorials/intermediate/01-customization)
+[Enter Intermediate Level →](/tutorials/en/intermediate/01-customization)

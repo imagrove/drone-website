@@ -64,90 +64,170 @@ const isZh = lang === 'zh';
             <h2 style="text-align: center; font-size: 1.75rem; margin-bottom: 0.5rem;">{t('courses.title')}</h2>
             <p style="text-align: center; color: var(--text-medium); margin-bottom: 2rem;">{t('courses.subtitle')}</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div class="course-grid">
                 <!-- Beginner -->
-                <div style="background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
-                    <div style="background: #10B981; color: white; padding: 1.5rem;">
-                        <h3 style="margin-bottom: 0.5rem;">{t('courses.beginner.title')}</h3>
-                        <p style="opacity: 0.9;">{t('courses.beginner.desc')}</p>
+                <div class="course-card">
+                    <div class="course-header" style="background: #10B981;">
+                        <h3>{t('courses.beginner.title')}</h3>
+                        <p>{t('courses.beginner.desc')}</p>
                     </div>
-                    <div style="padding: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.level')}</span>
+                    <div class="course-body">
+                        <div class="course-row">
+                            <span>{t('courses.level')}</span>
                             <strong>{isZh ? '初级' : 'Beginner'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.coding')}</span>
+                        <div class="course-row">
+                            <span>{t('courses.coding')}</span>
                             <strong>{isZh ? '零基础' : 'No coding'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.duration')}</span>
+                        <div class="course-row">
+                            <span>{t('courses.duration')}</span>
                             <strong>{isZh ? '1-2 周' : '1-2 weeks'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="color: var(--text-light);">{t('courses.projects')}</span>
+                        <div class="course-row last">
+                            <span>{t('courses.projects')}</span>
                             <strong>{isZh ? '6 个趣味项目' : '6 fun projects'}</strong>
                         </div>
-                        <a href={isZh ? "/zh/tutorials" : "/tutorials"} style="background: #10B981; color: white; padding: 0.5rem 1rem; border-radius: var(--radius); display: block; text-align: center;">{t('courses.cta')}</a>
+                        <a href={isZh ? "/zh/tutorials" : "/tutorials"} class="course-btn" style="background: #10B981;">{t('courses.cta')}</a>
                     </div>
                 </div>
-                
+
                 <!-- Intermediate -->
-                <div style="background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
-                    <div style="background: var(--primary); color: white; padding: 1.5rem;">
-                        <h3 style="margin-bottom: 0.5rem;">{t('courses.intermediate.title')}</h3>
-                        <p style="opacity: 0.9;">{t('courses.intermediate.desc')}</p>
+                <div class="course-card">
+                    <div class="course-header" style="background: var(--primary);">
+                        <h3>{t('courses.intermediate.title')}</h3>
+                        <p>{t('courses.intermediate.desc')}</p>
                     </div>
-                    <div style="padding: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.level')}</span>
+                    <div class="course-body">
+                        <div class="course-row">
+                            <span>{t('courses.level')}</span>
                             <strong>{isZh ? '中级' : 'Intermediate'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.coding')}</span>
+                        <div class="course-row">
+                            <span>{t('courses.coding')}</span>
                             <strong>{isZh ? '基础 C 语言' : 'Basic C'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.duration')}</span>
+                        <div class="course-row">
+                            <span>{t('courses.duration')}</span>
                             <strong>{isZh ? '1-2 个月' : '1-2 months'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="color: var(--text-light);">{t('courses.projects')}</span>
-                            <strong>{isZh ? '6 个进阶项目' : '6 advanced projects'}</strong>
+                        <div class="course-row last">
+                            <span>{t('courses.projects')}</span>
+                            <strong>{isZh ? '9 个进阶项目' : '9 advanced projects'}</strong>
                         </div>
-                        <a href={isZh ? "/zh/tutorials/intermediate" : "/tutorials/intermediate"} style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: var(--radius); display: block; text-align: center;">{t('courses.cta')}</a>
+                        <a href={isZh ? "/zh/tutorials/intermediate" : "/tutorials/intermediate"} class="course-btn" style="background: var(--primary);">{t('courses.cta')}</a>
                     </div>
                 </div>
-                
+
                 <!-- Advanced -->
-                <div style="background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
-                    <div style="background: #DC2626; color: white; padding: 1.5rem;">
-                        <h3 style="margin-bottom: 0.5rem;">{t('courses.advanced.title')}</h3>
-                        <p style="opacity: 0.9;">{t('courses.advanced.desc')}</p>
+                <div class="course-card">
+                    <div class="course-header" style="background: #DC2626;">
+                        <h3>{t('courses.advanced.title')}</h3>
+                        <p>{t('courses.advanced.desc')}</p>
                     </div>
-                    <div style="padding: 1.5rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.level')}</span>
+                    <div class="course-body">
+                        <div class="course-row">
+                            <span>{t('courses.level')}</span>
                             <strong>{isZh ? '高级' : 'Advanced'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.coding')}</span>
+                        <div class="course-row">
+                            <span>{t('courses.coding')}</span>
                             <strong>{isZh ? 'C 语言 + Python' : 'C + Python'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
-                            <span style="color: var(--text-light);">{t('courses.duration')}</span>
+                        <div class="course-row">
+                            <span>{t('courses.duration')}</span>
                             <strong>{isZh ? '2-3 个月' : '2-3 months'}</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="color: var(--text-light);">{t('courses.projects')}</span>
-                            <strong>{isZh ? '7 个挑战项目' : '7 challenge projects'}</strong>
+                        <div class="course-row last">
+                            <span>{t('courses.projects')}</span>
+                            <strong>{isZh ? '11 个挑战项目' : '11 challenge projects'}</strong>
                         </div>
-                        <a href={isZh ? "/zh/tutorials/advanced" : "/tutorials/advanced"} style="background: #DC2626; color: white; padding: 0.5rem 1rem; border-radius: var(--radius); display: block; text-align: center;">{t('courses.cta')}</a>
+                        <a href={isZh ? "/zh/tutorials/advanced" : "/tutorials/advanced"} class="course-btn" style="background: #DC2626;">{t('courses.cta')}</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <Footer />
 </Layout>
+
+<style>
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    .course-card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+
+    .course-header {
+        color: white;
+        padding: 1.5rem;
+    }
+
+    .course-header h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
+
+    .course-header p {
+        opacity: 0.9;
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .course-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .course-row span {
+        color: var(--text-light);
+    }
+
+    .course-row.last {
+        margin-bottom: 1rem;
+        border-bottom: none;
+    }
+
+    .course-btn {
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius);
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        margin-top: auto;
+    }
+
+    @media (min-width: 992px) {
+        .course-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .course-card {
+            grid-template-rows: subgrid;
+            grid-row: span 2;
+        }
+    }
+</style>

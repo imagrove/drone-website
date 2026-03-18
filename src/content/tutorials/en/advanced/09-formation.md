@@ -1,5 +1,5 @@
 ---
-title: "Project 09: Multi-Drone Formation"
+title: "Multi-Drone Formation"
 description: "Implement multi-drone formation flight, such as triangular formation, line formation, etc."
 level: advanced
 order: 9
@@ -100,4 +100,4 @@ Congratulations! You have implemented multi-drone formation flight, which is a c
 
 In the next project, you will learn how to integrate AI recognition and path planning to implement intelligent task execution.
 
-[Continue to Project 10: Intelligent Task →](/tutorials/advanced/10-intelligent-task)
+[Continue to Project 10: Intelligent Task →](/tutorials/en/advanced/10-intelligent-task)

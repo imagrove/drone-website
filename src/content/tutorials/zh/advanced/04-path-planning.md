@@ -1,5 +1,5 @@
 ---
-title: "项目 04：路径规划大师"
+title: "路径规划大师"
 description: "用 A* 算法实现无人机自主路径规划，避开已知障碍物。"
 level: advanced
 order: 4
@@ -110,4 +110,4 @@ void astar_search(Point start, Point goal, Obstacle* obstacles, int obs_count) {
 
 在下一个项目中，你将学习如何开发实时避障系统。
 
-[继续项目 05：避障高手 →](/zh/tutorials/advanced/05-obstacle-avoidance)
+[继续项目 05：避障高手 →](/tutorials/zh/advanced/05-obstacle-avoidance)

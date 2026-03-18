@@ -1,5 +1,5 @@
 ---
-title: "项目 01：控制大师"
+title: "控制大师"
 description: "实现高级控制算法（如 LQR、MPC），优化无人机的飞行性能。"
 level: advanced
 order: 1
@@ -114,4 +114,4 @@ void controllerLQR(control_t *control, setpoint_t *setpoint, const state_t *stat
 
 在下一个项目中，你将学习如何开发多传感器数据融合系统。
 
-[继续项目 02：传感器融合专家 →](/zh/tutorials/advanced/02-sensor-fusion)
+[继续项目 02：传感器融合专家 →](/tutorials/zh/advanced/02-sensor-fusion)

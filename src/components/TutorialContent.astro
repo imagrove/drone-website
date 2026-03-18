@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import TutorialSidebar from './TutorialSidebar.astro';
+import BackToTop from './BackToTop.astro';
+import MobileGestures from './MobileGestures.astro';
 import { useTranslations } from '../i18n/utils';
 import { defaultLang, ui } from '../i18n/ui';
 import type { CollectionEntry } from 'astro:content';
@@ -28,6 +30,7 @@ const t = useTranslations(lang);
     lang={lang}
 >
     <Header />
+    <MobileGestures />
 
     <!-- Mobile Sidebar Toggle -->
     <button class="mobile-sidebar-toggle" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 100; background: var(--primary); color: white; border: none; border-radius: 50%; width: 56px; height: 56px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); cursor: pointer;" aria-label="Toggle sidebar">
@@ -73,6 +76,7 @@ const t = useTranslations(lang);
         </main>
     </div>
     <Footer />
+    <BackToTop />
 </Layout>
 
 <style>
@@ -139,7 +143,7 @@ const t = useTranslations(lang);
     }
     .tutorial-main {
         padding: 2rem;
-        max-width: 800px;
+        max-width: 1200px;
     }
 
     /* Mobile styles */

@@ -1,5 +1,5 @@
 ---
-title: "Project 10: Intelligent Task"
+title: "Intelligent Task"
 description: "Integrate AI recognition and path planning to implement intelligent task execution, such as autonomous search."
 level: advanced
 order: 10
@@ -100,4 +100,4 @@ Congratulations! You have implemented intelligent task execution, which is the u
 
 In the final project, you will complete the ultimate challenge of autonomous navigation.
 
-[Continue to Project 11: Ultimate Challenge →](/tutorials/advanced/11-ultimate-challenge)
+[Continue to Project 11: Ultimate Challenge →](/tutorials/en/advanced/11-ultimate-challenge)

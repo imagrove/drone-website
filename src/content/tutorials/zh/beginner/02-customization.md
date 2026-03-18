@@ -1,5 +1,5 @@
 ---
-title: "项目 02：个性小飞机"
+title: "个性小飞机"
 description: "通过烧录不同的固件，给无人机更换起飞音效和 LED 灯效，打造专属个性飞机。"
 level: beginner
 order: 2
@@ -102,4 +102,4 @@ lang: zh
 
 在下一个项目中，你将学习如何使用路径规划工具，让无人机自动画出"8"字或心形，成为一个空中画家。
 
-[继续项目 03：空中画家 →](/zh/tutorials/beginner/03-path-planning)
+[继续项目 03：空中画家 →](/tutorials/zh/beginner/03-path-planning)

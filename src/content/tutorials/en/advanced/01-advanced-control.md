@@ -1,5 +1,5 @@
 ---
-title: "Project 01: Control Master"
+title: "Control Master"
 description: "Implement advanced control algorithms (such as LQR, MPC) to optimize drone flight performance."
 level: advanced
 order: 1
@@ -114,4 +114,4 @@ Congratulations! You have implemented advanced control algorithms, which is the 
 
 In the next project, you will learn how to develop multi-sensor data fusion systems.
 
-[Continue to Project 02: Sensor Fusion Expert →](/tutorials/advanced/02-sensor-fusion)
+[Continue to Project 02: Sensor Fusion Expert →](/tutorials/en/advanced/02-sensor-fusion)

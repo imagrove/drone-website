@@ -1,5 +1,5 @@
 ---
-title: "Project 06: Target Tracking"
+title: "Target Tracking"
 description: "Use OpenCV library for real-time color target tracking."
 level: advanced
 order: 6
@@ -113,4 +113,4 @@ Congratulations! You have implemented target tracking functionality, which is an
 
 In the next project, you will learn how to deploy TinyYOLOv3 model on ESP32-S3 for object detection.
 
-[Continue to Project 07: AI Recognition →](/tutorials/advanced/07-ai-recognition)
+[Continue to Project 07: AI Recognition →](/tutorials/en/advanced/07-ai-recognition)

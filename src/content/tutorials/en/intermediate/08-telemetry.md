@@ -1,5 +1,5 @@
 ---
-title: "Project 08: Wireless Plotter"
+title: "Wireless Plotter"
 description: "Transmit the drone's flight data back to the computer via Wi-Fi and plot curves in real-time."
 level: intermediate
 order: 8
@@ -92,4 +92,4 @@ Congratulations! You have implemented the drone's data visualization function, w
 
 In the next project, you will learn how to achieve simple communication between two drones.
 
-[Continue to Project 09: Multi-Drone Communication →](/tutorials/intermediate/09-multi-drone)
+[Continue to Project 09: Multi-Drone Communication →](/tutorials/en/intermediate/09-multi-drone)

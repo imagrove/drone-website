@@ -1,5 +1,5 @@
 ---
-title: "Project 09: Multi-Drone Communication"
+title: "Multi-Drone Communication"
 description: "Achieve simple communication between two drones and understand wireless communication principles."
 level: intermediate
 order: 9
@@ -104,4 +104,4 @@ Congratulations! You have completed all intermediate projects and mastered drone
 
 You are now ready to enter the advanced level and learn more complex algorithms and system integration.
 
-[Enter Advanced Level →](/tutorials/advanced/01-advanced-control)
+[Enter Advanced Level →](/tutorials/en/advanced/01-advanced-control)

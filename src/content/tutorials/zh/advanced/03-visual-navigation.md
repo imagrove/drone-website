@@ -1,5 +1,5 @@
 ---
-title: "项目 03：视觉导航"
+title: "视觉导航"
 description: "用摄像头的光流数据实现室内定位，无需 GPS。"
 level: advanced
 order: 3
@@ -109,4 +109,4 @@ void vio_update(float gx, float gy, float gz,
 
 在下一个项目中，你将学习如何用 A* 算法实现无人机自主路径规划。
 
-[继续项目 04：路径规划大师 →](/zh/tutorials/advanced/04-path-planning)
+[继续项目 04：路径规划大师 →](/tutorials/zh/advanced/04-path-planning)

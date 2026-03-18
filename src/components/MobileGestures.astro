@@ -1,0 +1,99 @@
+---
+// Mobile Gestures Component
+---
+
+<style>
+  /* Swipe navigation styles */
+  .swipe-hint {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 41, 59, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  .swipe-hint.visible {
+    opacity: 1;
+  }
+
+  @media (min-width: 769px) {
+    .swipe-hint {
+      display: none;
+    }
+  }
+</style>
+
+<div class="swipe-hint">
+  ← Swipe for prev/next tutorial →
+</div>
+
+<script is:inline>
+  (function() {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 100;
+    const hint = document.querySelector('.swipe-hint');
+    let hintShown = false;
+
+    // Show hint on first touch
+    document.addEventListener('touchstart', function() {
+      if (!hintShown) {
+        hint.classList.add('visible');
+        hintShown = true;
+        setTimeout(() => {
+          hint.classList.remove('visible');
+        }, 3000);
+      }
+    });
+
+    // Handle swipe gestures
+    document.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        // Get current tutorial index
+        const currentPath = window.location.pathname;
+        const tutorialLinks = document.querySelectorAll('.tutorial-link');
+        let currentIndex = -1;
+        
+        tutorialLinks.forEach((link, index) => {
+          if (link.getAttribute('href') === currentPath) {
+            currentIndex = index;
+          }
+        });
+
+        // Swipe right - previous tutorial
+        if (diff > 0 && currentIndex > 0) {
+          const prevLink = tutorialLinks[currentIndex - 1];
+          if (prevLink) {
+            window.location.href = prevLink.getAttribute('href');
+          }
+        }
+        // Swipe left - next tutorial
+        else if (diff < 0 && currentIndex < tutorialLinks.length - 1) {
+          const nextLink = tutorialLinks[currentIndex + 1];
+          if (nextLink) {
+            window.location.href = nextLink.getAttribute('href');
+          }
+        }
+      }
+    }
+  })();
+</script>

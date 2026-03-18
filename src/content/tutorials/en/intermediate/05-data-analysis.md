@@ -1,5 +1,5 @@
 ---
-title: "Project 05: Data Magician"
+title: "Data Magician"
 description: "Read the drone's sensor data and perform simple analysis."
 level: intermediate
 order: 5
@@ -81,4 +81,4 @@ Congratulations! You have mastered the methods of reading and analyzing sensor d
 
 In the next project, you will learn how to use ultrasonic sensors for obstacle avoidance.
 
-[Continue to Project 06: Obstacle Avoidance Master →](/tutorials/intermediate/06-obstacle-avoidance)
+[Continue to Project 06: Obstacle Avoidance Master →](/tutorials/en/intermediate/06-obstacle-avoidance)

@@ -1,5 +1,5 @@
 ---
-title: "项目 07：视觉工程师"
+title: "视觉工程师"
 description: "利用 ESP32-S3 的摄像头接口，实现简单的视觉识别功能。"
 level: intermediate
 order: 7
@@ -103,4 +103,4 @@ void detectRedObject() {
 
 在下一个项目中，你将学习如何通过 Wi-Fi 将无人机的飞行数据回传到电脑。
 
-[继续项目 08：无线绘图板 →](/zh/tutorials/intermediate/08-telemetry)
+[继续项目 08：无线绘图板 →](/tutorials/zh/intermediate/08-telemetry)

@@ -1,0 +1,98 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  class?: string;
+}
+
+const { 
+  src, 
+  alt, 
+  width = 800, 
+  height = 600, 
+  loading = 'lazy',
+  class: className = ''
+} = Astro.props;
+---
+
+<img 
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding="async"
+  class={`optimized-image ${className}`}
+  style={`
+    aspect-ratio: ${width} / ${height};
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  `}
+/>
+
+<style>
+  .optimized-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  .optimized-image[loading="lazy"] {
+    opacity: 0;
+  }
+
+  .optimized-image.loaded {
+    opacity: 1;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .optimized-image {
+      border-radius: var(--radius);
+    }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const images = document.querySelectorAll('.optimized-image');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.complete) {
+            img.classList.add('loaded');
+          } else {
+            img.addEventListener('load', () => {
+              img.classList.add('loaded');
+            });
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px 0px',
+      threshold: 0.01
+    });
+
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  })();
+</script>
